@@ -26,11 +26,11 @@ RUN cd /tmp/models && ./download_models.sh
 
 # Add project and change directory
 ADD . /usr/src/app/
-WORKDIR /usr/src/app
+WORKDIR /usr/src/app/server
 
-RUN cd server/models \
+RUN cd models \
     && ln -s /tmp/models/wct \
     && ln -s /tmp/models/pix2pix
 
-EXPOSE 8080 5001 5002
-CMD ["bash", "run.sh"]
+EXPOSE 8080 
+CMD ["python3", "app.py"]
