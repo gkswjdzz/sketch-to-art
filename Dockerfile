@@ -25,12 +25,13 @@ ADD server/models/download_models.sh /tmp/models/
 RUN cd /tmp/models && ./download_models.sh
 
 # Add project and change directory
+RUN pip3 install requests
 ADD . /usr/src/app/
-WORKDIR /usr/src/app/server
+WORKDIR /usr/src/app
 
-RUN cd models \
+RUN cd server/models \
     && ln -s /tmp/models/wct \
     && ln -s /tmp/models/pix2pix
 
 EXPOSE 8080 
-CMD ["python3", "app.py"]
+CMD ["bash", "run.sh"]

@@ -7,7 +7,7 @@
            v-viewer="{inline: false, toolbar: false, rotatable: false, transition: true}">
         <img v-for="img in showList"
              :key="img"
-             :src="'https://localhost:8080/images/'+img"
+             :src="'/images/'+img"  
              alt="">
       </div>
       <div>
@@ -28,7 +28,7 @@ import "viewerjs/dist/viewer.css";
 import Vue from "vue";
 Vue.use(Viewer);
 
-const axiosStyle = axios.create({ baseURL: "https://localhost:8080/style" });
+const axiosStyle = axios.create({ baseURL: "/" });
 
 export default {
   name: "GalleryPage",

@@ -148,13 +148,13 @@ Vue.use(ToggleButton);
 
 const axiosPix =
   process.env.NODE_ENV === "development"
-    ? axios.create({ baseURL: "http://localhost:8080" })
-    : axios.create({ baseURL: "http://localhost:8080" });
+    ? axios.create({ baseURL: "/" })   //FIXME : URL
+    : axios.create({ baseURL: "/" });  //FIXME : URL
 
 const axiosStyle =
   process.env.NODE_ENV === "development"
-    ? axios.create({ baseURL: "http://localhost:8080" })
-    : axios.create({ baseURL: "http://localhost:8080" });
+    ? axios.create({ baseURL: "/" })  //FIXME : URL
+    : axios.create({ baseURL: "/" });  //FIXME : URL
 
 export default {
   name: "LandingPage",
@@ -311,7 +311,7 @@ export default {
           }
         })
           .then(response => {
-            console.log(response.data)
+            // console.log(response.data)
             this.resultPix = response.data;
             this.resultSrc = this.resultPix;
             this.modalContent = "Styling the picture...";

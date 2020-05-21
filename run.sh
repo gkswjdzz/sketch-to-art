@@ -8,4 +8,5 @@ export HOST=0.0.0.0
 (cd server && python3 app_pix.py) &
 
 # Run front-end
-yarn && yarn dev
+yarn build # && yarn dev
+(cd server && python3 app.py)
