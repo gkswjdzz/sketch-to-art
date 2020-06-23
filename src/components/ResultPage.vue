@@ -83,7 +83,7 @@ export default {
     document.getElementById('resultId').src = JSON.parse(localStorage.getItem('resultSrc'));
     this.styleId = localStorage.getItem('styleId');
     this.resultSrc = JSON.parse(localStorage.getItem('resultSrc'));
-    console.log(this.styleId)
+
     for (let i = 0; i < this.styleImages.length; i++) {
       if (this.styleImages[i].id === this.styleId) {
         this.targetImage = this.styleImages[i]

@@ -223,17 +223,13 @@ export default {
             cancel: "Got it"
           }
         });
-        console.log("pix server error");
       })
       .then(response => {
-        console.log(response.data);
         return axiosStyle.get("/");
       })
       .catch(function(error) {
-        console.log("style server error");
       })
       .then(response => {
-        console.log(response.data);
       });
   },
 
@@ -244,7 +240,6 @@ export default {
     },
 
     onSelectStyle(id) {
-      console.log(id)
       const svgs = document.getElementsByClassName('svg');
       const target = document.getElementById(`click-${id}`);
 
@@ -312,7 +307,6 @@ export default {
           this.resultSrc = this.resultStyle;
           this.showToggle = false;
 
-          console.log('here')
           localStorage.setItem('user-canvas', JSON.stringify(src));
           localStorage.setItem('style-img', JSON.stringify(this.userStyleSrc));
           localStorage.setItem('styleId', this.selectedId)
@@ -333,7 +327,6 @@ export default {
           }
         })
           .then(response => {
-            // console.log(response.data)
             this.resultPix = response.data;
             this.resultSrc = this.resultPix;
             this.modalContent = "Styling the picture...";
@@ -352,8 +345,6 @@ export default {
             this.resultSrc = this.resultStyle;
             this.showToggle = true;
 
-
-            console.log('here2')
             let idx = 0;
             for (let i = 0; i < this.styleImages.length; i++) {
               const styleImage = this.styleImages[i]
@@ -407,7 +398,6 @@ export default {
             }
           })
             .then(response => {
-              console.log(response.data);
               this.showWaitModal = false;
               this.$swal("Go to the gallery and check it out!", {
                 icon: "success"
@@ -454,7 +444,7 @@ export default {
 
       const images = document.getElementsByClassName('selected');
       const svgs = document.getElementsByClassName('svg selected');
-      console.log(images)
+      
       for(let i = 0; i < images.length; i++) {
         const image = images[i];
         image.classList.remove('selected');

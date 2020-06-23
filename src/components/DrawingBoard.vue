@@ -29,42 +29,12 @@ export default {
       filling: false,
       vw: 0,
       vh: 0
-      // mouse: {
-      //   current: {
-      //     x: 0,
-      //     y: 0
-      //   },
-      //   previous: {
-      //     x: 0,
-      //     y: 0
-      //   },
-      //   down: false
-      // },
-      // width: "",
-      // height: "",
-      // lineColor: "#000000",
-      // lineWidth: 2
     };
   },
-
-  // computed: {
-  //   currentMouse: function() {
-  //     var c = document.getElementById("canvas");
-  //     var rect = c.getBoundingClientRect();
-
-  //     return {
-  //       x: this.mouse.current.x - rect.left,
-  //       y: this.mouse.current.y - rect.top
-  //     };
-    // }
-  // },
-
   methods: {
     handleStart: function(evt) {
-      console.log('start');
       this.painting = true;
       this.ctx.beginPath();
-      this.ctx.moveTo(x, y);
     },
     handleEnd: function() {
 
@@ -87,11 +57,9 @@ export default {
       }
     },
     stopPainting: function() {
-      console.log('stop');
       this.painting = false;
     },
     startPainting: function() {
-      console.log('start');
       this.painting = true;
     },
     onMouseMove: function(event) {
@@ -139,8 +107,6 @@ export default {
 
     this.canvas.width= this.CANVAS_WIDTH,
     this.canvas.height= this.CANVAS_HEIGHT,
-
-    console.log(this.canvas.width, this.canvas.height);
 
     this.ctx.fillStyle = "white";
     this.ctx.fillRect(0, 0, this.CANVAS_WIDTH, this.CANVAS_HEIGHT);
