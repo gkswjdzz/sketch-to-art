@@ -7,6 +7,11 @@
           v-on:mouseleave="stopPainting"
           v-on:click="handleCanvasClick"
           v-on:contextmenu="handleContextMenu"
+          v-on:
+          v-on:touchstart="handleStart"
+          v-on:touchend="handleEnd"
+          v-on:touchcancel="handleCancel"
+          v-on:touchmove="handleMove"
           :width="this.width"
           :height="this.height"></canvas>
   </div>

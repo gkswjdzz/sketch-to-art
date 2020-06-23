@@ -63,8 +63,8 @@ export default {
         { id: "1", src: require("@/assets/thumbs/1.jpg"), name: "SHINKAI MAKOTO" },
         { id: "2", src: require("@/assets/thumbs/2.jpg"), name: "VAN GOGH" },
         { id: "3", src: require("@/assets/thumbs/3.jpg"), name: "CLAUDE MONET" },
-        { id: "4", src: require("@/assets/thumbs/4.jpg"), name: "UKIYOE" },
-        { id: "5", src: require("@/assets/thumbs/5.jpg"), name: "CARTOON" },
+        { id: "8", src: require("@/assets/thumbs/8.jpg"), name: "UKIYOE" },
+        { id: "4", src: require("@/assets/thumbs/4.jpg"), name: "CARTOON" },
         { id: "6", name: "YOUR STYLE" }
         // { id: "6", src: require("@/assets/thumbs/6.jpg") },
         // { id: "7", src: require("@/assets/thumbs/7.jpg") },
