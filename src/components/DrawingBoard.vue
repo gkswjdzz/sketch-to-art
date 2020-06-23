@@ -215,4 +215,19 @@ canvas {
   width: 800px;
   height: 560px;
 }
+
+@media only screen and (max-width: 900px) {
+  canvas {
+    width: 520px;
+    height: 364px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  canvas {
+    width: 312px;
+    height: 236px;
+  }
+}
+
 </style>

@@ -196,4 +196,42 @@ export default {
   transform: scale(0.98);
 }
 
+@media only screen and (max-width: 900px) {
+  .container {
+    width: 520px;
+  }
+
+  .canvas-wrapper img {
+    width: 520px;
+    height: 364px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .container {
+    width: 100%;
+  }
+
+  .canvas-wrapper {
+    padding: 0px;
+    margin-top: 48px;
+  }
+  .canvas-wrapper img {
+    width: 312px;
+    height: 236px;
+
+  }
+
+  .input-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .input-wrapper div {
+    margin-top: 40px;
+  }
+}
+
 </style>

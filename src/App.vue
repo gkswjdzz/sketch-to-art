@@ -16,6 +16,7 @@
     </header>
 
     <router-view/>
+
     <footer>
       <div id="footer">
         <div id="ainize">
@@ -153,22 +154,6 @@ table {
 #title img {
   margin-right: 16px;
 }
-.spacer {
-  flex: 1;
-}
-
-header {
-  text-align: left;
-  display: flex;
-}
-
-header #title { 
-  width: 442px;
-}
-
-@media only screen and (max-width: 800px) {
-
-}
 
 footer {
   width: 100%;
@@ -195,4 +180,36 @@ footer div {
   flex: 0 1 auto;
   display: flex;
 }
+
+
+@media only screen and (max-width: 900px) {
+  .header-wrapper {
+    width: 520px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .header-wrapper {
+    width: 240px;
+  }
+  .header-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  button .route {
+    margin-top: 14px;
+  }
+  #footer {
+    flex-direction: column;
+    padding: 0;
+    margin: 40px 0;
+  }
+
+  footer div {
+    margin: 0;
+    padding: 0 0 20px 0;
+  }
+}
+
 </style>
