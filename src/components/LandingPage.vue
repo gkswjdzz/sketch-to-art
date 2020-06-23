@@ -922,6 +922,7 @@ export default {
 @media only screen and (max-width: 400px) {
   #wrapper {
     width: 100%;
+    padding-top: 0;
   }
 
   .image-container {
