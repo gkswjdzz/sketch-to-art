@@ -123,46 +123,10 @@
             <button v-else id="submitBtn" class="btn" disabled>
               <div class="loader">Loading...</div>
             </button>
+            <router-link to="/result"
+                  id="resultId" class="route" tag=button style="display: none;">Result</router-link>
           </div>
         </div>
-      </div>
-
-      <div class="section">
-        <h3>Result</h3>
-        <div class="result-container">
-          <div class="hint"
-               v-if="!resultSrc">
-            Your result will be shown here.
-          </div>
-          <img v-if="resultSrc"
-               :src="resultSrc"
-               alt="">
-        </div>
-
-        <button v-if="showToggle"
-                class="btn"
-                @click="toggleResult">
-          <span class="toggle"></span>
-          <span>Toggle result</span>
-        </button>
-        <button v-if="resultSrc"
-                class="btn"
-                @click="uploadToGallery">
-          <span>Upload to Gallery</span>
-        </button>
-        <div v-if="resultSrc"
-             class="hint">Right click or press long to save</div>
-      </div>
-    </div>
-
-    <div class="overlay"
-         v-if="showWaitModal">
-      <div class="half-circle-spinner">
-        <div class="circle circle-1"></div>
-        <div class="circle circle-2"></div>
-      </div>
-      <div class="content">
-        {{ modalContent }}
       </div>
     </div>
   </div>
@@ -299,6 +263,10 @@ export default {
     },
 
     submitDrawing() {
+      // setTimeout(() => {
+      //   const result = document.getElementById('resultId');
+      //   result.click();
+            // }, 5000);
       // Retreive canvas drawing
       var canvas = document.querySelector("#canvas");
       var context = canvas.getContext("2d");
@@ -346,6 +314,13 @@ export default {
           this.resultStyle = response.data;
           this.resultSrc = this.resultStyle;
           this.showToggle = false;
+
+          console.log('here')
+          localStorage.setItem('user-canvas', JSON.stringify(src));
+          localStorage.setItem('style-img', JSON.stringify(this.userStyleSrc));
+          localStorage.setItem('styleId', this.selectedId)
+          localStorage.setItem("resultSrc", JSON.stringify(this.resultSrc));
+          document.getElementById('resultId').click();
         });
       } else {
         // Use sketch
@@ -379,6 +354,15 @@ export default {
             this.resultStyle = response.data;
             this.resultSrc = this.resultStyle;
             this.showToggle = true;
+
+
+            console.log('here2')
+            
+            localStorage.setItem('user-canvas', JSON.stringify(src));
+            localStorage.setItem('style-img', JSON.stringify(this.styleImages[parseInt(this.selectedId) - 1].src));
+            localStorage.setItem('styleId', this.selectedId)
+            localStorage.setItem("resultSrc", JSON.stringify(this.resultSrc));
+            document.getElementById('resultId').click();
           });
       }
     },
@@ -413,7 +397,7 @@ export default {
           this.showWaitModal = true;
 
           axiosStyle({
-            url: "/submit-to-gallery",
+            url: "/submit-to-gallery", 
             method: "POST",
             data: uploadData,
             headers: {

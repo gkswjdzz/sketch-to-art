@@ -1,14 +1,18 @@
 <template>
   <div id="app">
     <header>
-      <div id="title">
-        <img :src="titleImage.src"/>
-        <div>Sketch to Art</div>
+      <div class="header-wrapper">
+        <div id="title">
+          <router-link to="/"
+                    class="route" tag=img :src="titleImage.src"></router-link>
+          <router-link to="/"
+                    class="route" tag=div>Sketch to Art</router-link>
+        </div>
+        <div class="router">
+          <router-link to="/about"
+                    class="route" tag=button>About</router-link>
+        </div>
       </div>
-      <router-link to="/"
-                   class="route" tag=button>Demo</router-link>
-      <router-link to="/about"
-                   class="route" tag=button>About</router-link>
     </header>
 
     <router-view/>
@@ -101,26 +105,29 @@ table {
   padding-top: 50px;
 }
 
-header {
-  font-family: Muli;
-  font-style: normal;
-  font-size: 20px;
-  line-height: 20px;
+.header-wrapper {
+  width: 800px;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.route {
+.router .route {
   width: 80px;
   height: 32px;
-  margin-left: 8px;
-  text-align: center;
+
   background: #FFFFFF;
   border: 1px solid #DFDFDF;
   box-sizing: border-box;
   border-radius: 24px;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 20px;
+
+  outline: none;
   color: #979797;
+}
+
+.router .route:hover {
+  color: #333333;
+  border: 1px solid #333333;
 }
 
 #title {
@@ -131,7 +138,7 @@ header {
   text-align: left;
   vertical-align: middle;
 
-
+  cursor:pointer;
   font-family: Muli;
   font-style: normal;
   font-weight: bold;
