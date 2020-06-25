@@ -19,10 +19,10 @@
 
     <footer>
       <div id="footer">
-        <div id="ainize">
+        <div id="ainize" OnClick="location.href='https://ainize.ai/'" style="cursor:pointer;">
         <img :src="ainizeImage.src" style="width: 13.6px; height: 14px; padding-right: 8px"/>
         Powered by Ainize</div>
-      <div id="git">
+      <div id="git" OnClick="location.href='https://github.com/gkswjdzz/sketch-to-art'" style="cursor:pointer;">
         <img :src="gitImage.src" style="width: 14px; height: 14px; padding-right: 5.5px"/>
         Contribute on GitHub</div>
       </div>
@@ -52,6 +52,7 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css?family=Muli');
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
