@@ -2,7 +2,7 @@ import os
 
 import requests
 # Flask utils
-from flask import Flask, redirect, url_for, request, render_template, Response, send_file, make_response
+from flask import Flask, redirect, url_for, request, render_template, Response, send_file, make_response, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__,
@@ -15,6 +15,9 @@ CORS(app)
 def main(): 
     return render_template('index.html')
 
+@app.route('/health')
+def health_check():
+    return "ok"
 
 def reverse_proxy(domain='http://localhost:5001/'):
     # XXX: THANKS TO https://stackoverflow.com/a/36601467
