@@ -29,6 +29,8 @@ RUN pip3 install requests
 ADD . /usr/src/app/
 WORKDIR /usr/src/app
 
+RUN yarn && yarn build
+
 RUN cd server/models \
     && ln -s /tmp/models/wct \
     && ln -s /tmp/models/pix2pix
